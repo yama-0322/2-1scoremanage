@@ -1,53 +1,26 @@
-<%@ page contentType="text/html; charset=UTF-8" language="java" %>
+<%@ page contentType="text/html; charset=UTF-8" %>
 <!DOCTYPE html>
-<html lang="ja">
+<html>
 <head>
-  <meta charset="UTF-8">
-  <title>成績登録</title>
-  <style>
-
-  <%--画面全体の本体部分に対する設定--%>
-
-    body { margin: 0; font-family: 'メイリオ', sans-serif; }
-    .container { display: flex; }
-
-
-     <%-- nav=サイドメニュー（左側の部分）の設定 --%>
-
-    nav {
-      width: 200px;
-      background: #fff0f5;
-      padding: 20px;
-      height: 100vh;
-    }
-    nav ul { list-style-type: none; padding: 0; }
-    nav li { margin: 10px 0; }
-    nav a {         <%-- ⇚ a:hover = マウスを乗せた時の指示 --%>
-      display: block;
-      color: #333;
-      text-decoration: none;
-      padding: 5px 10px;
-      border-radius: 4px;
-    }
-    nav a:hover { background-color: #bdc3c7; }
-    .submenu { margin-left: 15px; }
-    main { flex: 1; padding: 20px; }
-  </style>
+    <title>成績登録フォーム</title>
 </head>
 <body>
+    <h2>成績を登録する</h2>
 
-  <%@ include file="header.jsp" %>
+    <form action="RegisterGradeServlet" method="post">
+        <label>学生ID：</label>
+        <input type="text" name="studentId" required><br><br>
 
-  <div class="container">
-    <%@ include file="menu_kotei.jsp" %>
+        <label>科目名：</label>
+        <input type="text" name="subject" required><br><br>
 
-    <main>
-      <h2>成績登録</h2>
-      <p>成績登録できるようにする</p>
-    </main>
-  </div>
+        <label>点数：</label>
+        <input type="number" name="score" min="0" max="100" required><br><br>
 
-  <%@ include file="footer.jsp" %>
+        <input type="submit" value="登録する">
+    </form>
 
+    <br>
+    <a href="menu.jsp">⬅ メニューに戻る</a>
 </body>
 </html>
