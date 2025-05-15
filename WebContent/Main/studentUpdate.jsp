@@ -40,7 +40,7 @@
 
 
         <br>
-        <a href="/Main/student.jsp">戻る</a>
+        <a href="student.jsp">戻る</a>
 
 
     </div>
